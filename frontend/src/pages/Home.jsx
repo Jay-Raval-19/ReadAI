@@ -45,13 +45,13 @@ const Home = () => {
 
       try {
         // First, get the total number of pages
-        const pageCountResponse = await axios.post('http://localhost:5000/get-page-count', formData);
+        const pageCountResponse = await axios.post('https://readai.onrender.com/get-page-count', formData);
         const totalPages = pageCountResponse.data.totalPages;
         setTotalPages(totalPages);
         setPageRange({ start: 1, end: totalPages });
 
         // Then upload the file with page range
-        const uploadResponse = await axios.post('http://localhost:5000/upload', formData, {
+        const uploadResponse = await axios.post('https://readai.onrender.com/upload', formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
           params: {
             startPage: pageRange.start,
@@ -97,7 +97,7 @@ const Home = () => {
     }
     try {
       console.log('Sending search query to backend:', searchQuery);
-      const response = await axios.post('http://localhost:5000/search', { query: searchQuery });
+      const response = await axios.post('https://readai.onrender.com/search', { query: searchQuery });
       console.log('Search response received:', response.data);
       setSearchResults(response.data.results || []);
       if (response.data.results.length === 0) {
