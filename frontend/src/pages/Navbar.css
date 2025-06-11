@@ -1,31 +1,25 @@
-/* General Navbar Styles */
 header {
-  /* z-index: 1000; */
   width: 100%;
-  max-width: 100%;
   overflow: hidden;
   background-color: #ffffff;
   box-shadow: 0 1px 2px rgba(177, 13, 201, 0.8),  /* Main shadow */
               0 0 2px rgba(255, 0, 255, 0.7),    /* Stronger neon glow */
               0 0 2px rgba(255, 0, 255, 0.6);    /* Extended glow */
+  position: fixed;
+  height: 60px;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(255, 255, 255);
   background-color: #ffffff;
+  height: 60px;
+  padding: 0px 10px;
   color: rgb(0, 0, 0);
-  padding: 8px 5vw;
-  width: 100%;
-  height: 8vh;
-  box-sizing: border-box;
   transition: background-color 0.3s ease;
-  position: sticky;
-  top: 0;
-  
 }
+
 .dark .navbar {
   background-color: rgb(20, 20, 20);
   color: rgb(255, 255, 255);
@@ -34,48 +28,43 @@ header {
 .cluster1 {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 3px;
 }
 
 .logor {
-  width: 100px;
-  height: 100px;
-  object-fit: fill;
+  width: 50px;
+  height: 50px;
+}
+
+.logorn {
+  width: 50px;
+  height: 35px;
 }
 
 .cluster2, .cluster3 {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
-.login-btn {
-  padding: 0.5rem 2rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: normal;
-  color: var(--primary);
-  border: 1px solid black;
-  background-color: transparent;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease, color 0.3s ease ,transform 0.3s ease;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+.cluster1, .cluster2, .cluster3 {
+  padding: 0px 5px;
 }
+
 .login-btn:hover
 {
   transform: scale(1.2);
 }
+
 .upgrade-btn:hover
 {
   transform: scale(1.2);
 }
 
-.upgrade-btn {
-  padding: 0.5rem 2rem;
+.login-btn, .upgrade-btn {
+  padding: 3px 20px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
+  font-size: larger;
   font-weight: 500;
   letter-spacing: normal;
   background-image: linear-gradient(to top right, 
@@ -96,11 +85,11 @@ header {
     #7700f1 91.9%, 
     #7800f0);
   color: white;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   transition: background-color 0.3s ease, color 0.3s ease,transform 0.3s ease;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  border: none;
+  border: 1px solid black;
 }
 
 .upgrade-btn:hover {
@@ -125,14 +114,36 @@ header {
 }
 
 .login-btn:hover {
-  background-color: #030717;
-  color: white;
+  background-image: linear-gradient(to bottom left, 
+  #7800f0, 
+  #7700f1 8.1%, 
+  #7400f3 15.5%, 
+  #6e00f6 22.5%, 
+  #6800fa 29%, 
+  #5f00ff 35.3%, 
+  #5705ff 41.2%, 
+  #4f0aff 47.1%, 
+  #4710ff 52.9%, 
+  #4115ff 58.8%, 
+  #3a1aff 64.7%, 
+  #351fff 71%, 
+  #3123ff 77.5%, 
+  #2e26ff 84.5%, 
+  #2d28ff 91.9%, 
+  #2c29ff);
+  color: #fff;
 }
+
+.login-btn.dark, .upgrade-btn.dark {
+  border: 1px solid white;
+}
+
 .theme-toggle-btn {
   background: none;
   border: none;
   cursor: pointer;
 }
+
 .dark-mode {
   background-color: #333;
   background-color: #030717;
@@ -172,11 +183,12 @@ header {
   }
 }
 
-.dark .login-btn {
-  border: 1px solid #000000;
-}
+@media screen and (max-width: 470px) {
+  .logorn {
+    display: none;
+  }
 
-.dark .login-btn:hover, 
-.dark .upgrade-btn:hover {
-  background-color: #444;
+  .login-btn {
+    display: none;
+  }
 }

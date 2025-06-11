@@ -17,7 +17,6 @@ function App() {
 }
 
 const Layout = ({ children }) => {
-  const location = useLocation();
   return (
     <>
       {<Navbar />}
