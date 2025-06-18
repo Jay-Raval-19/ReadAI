@@ -21,6 +21,21 @@
   font-size: 1.2rem;
 }
 
+.upgrade-title {
+  font-size: 2.7rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.upgrade-desc {
+  color: #6b7280;
+  font-size: 1.15rem;
+  margin-bottom: 24px;
+}
+
 .plans-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -193,6 +208,189 @@
   color: #2c3e50;
 }
 
+.billing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 24px 0 0 0;
+}
+
+.billing-toggle span {
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+  margin: 0 8px;
+}
+
+.billing-toggle span.active {
+  color: #2563eb;
+}
+
+.billing-toggle span:first-child.active {
+  background: linear-gradient(90deg, #a259ff, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.billing-toggle span:last-child.active {
+  color: #2563eb;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch label {
+  display: block;
+  width: 56px;
+  height: 32px;
+  background: linear-gradient(90deg, #a259ff, #3b82f6);
+  border-radius: 16px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-switch label:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.toggle-switch input:checked + label:after {
+  transform: translateX(24px);
+}
+
+.toggle-switch input:checked + label {
+  background: linear-gradient(90deg, #3b82f6, #a259ff);
+}
+
+.plan-badge {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 16px;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 8px rgba(124,58,237,0.12);
+  z-index: 2;
+}
+
+.plan-card.popular {
+  border-color: #7c3aed;
+  box-shadow: 0 8px 32px rgba(124,58,237,0.10);
+  position: relative;
+}
+
+.plan-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.faq-section {
+  background: #f3f4f6;
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin: 40px 0 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.faq-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 48px;
+  justify-content: center;
+}
+
+.faq-item {
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 350px;
+  margin-bottom: 16px;
+}
+
+.faq-q {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+
+.faq-a {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.contact-sales {
+  margin: 48px auto 0 auto;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: #fff;
+  border-radius: 18px;
+  padding: 36px 18px 28px 18px;
+  text-align: center;
+  max-width: 700px;
+  box-shadow: 0 4px 24px rgba(124,58,237,0.10);
+}
+
+.contact-sales h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.contact-btn {
+  margin-top: 18px;
+  background: #fff;
+  color: #7c3aed;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 32px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-btn:hover {
+  background: #ede9fe;
+  color: #2563eb;
+}
+
 @media (max-width: 768px) {
   .plans-container {
     grid-template-columns: 1fr;
@@ -205,4 +403,203 @@
   .payment-section {
     padding: 20px;
   }
+}
+
+@media (max-width: 900px) {
+  .upgrade-container {
+    padding: 24px 8px;
+  }
+  .plans-container {
+    gap: 16px;
+  }
+  .plan-card {
+    padding: 18px;
+  }
+  .payment-section {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .upgrade-header h1 {
+    font-size: 1.5rem;
+  }
+  .upgrade-header p {
+    font-size: 1rem;
+  }
+  .plans-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .plan-card {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  .plan-card h2 {
+    font-size: 1.2rem;
+  }
+  .price {
+    font-size: 1.5rem;
+  }
+  .features li {
+    font-size: 0.95rem;
+    padding: 6px 0 6px 20px;
+  }
+  .select-plan {
+    padding: 10px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+  }
+  .payment-section {
+    padding: 10px;
+    max-width: 100%;
+  }
+  .pay-button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+  .upi-apps span {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+  .billing-toggle span {
+    font-size: 1rem;
+    margin: 0 4px;
+  }
+  .toggle-switch {
+    width: 40px;
+    height: 22px;
+  }
+  .toggle-switch label {
+    width: 40px;
+    height: 22px;
+    border-radius: 11px;
+  }
+  .toggle-switch label:after {
+    width: 14px;
+    height: 14px;
+    top: 4px;
+    left: 4px;
+  }
+  .toggle-switch input:checked + label:after {
+    transform: translateX(14px);
+  }
+}
+
+@media (max-width: 400px) {
+  .upgrade-header h1 {
+    font-size: 1.1rem;
+  }
+  .plan-card h2 {
+    font-size: 1rem;
+  }
+  .price {
+    font-size: 1.1rem;
+  }
+  .features li {
+    font-size: 0.8rem;
+  }
+  .select-plan {
+    font-size: 0.8rem;
+    padding: 7px;
+  }
+  .pay-button {
+    font-size: 0.9rem;
+    padding: 7px;
+  }
+}
+
+/* DARK MODE SUPPORT */
+.dark-mode .upgrade-container {
+  background: linear-gradient(135deg, #18122b 0%, #232946 50%, #121212 100%);
+}
+
+.dark-mode .upgrade-header,
+.dark-mode .upgrade-title {
+  color: #e0e7ef;
+}
+
+.dark-mode .upgrade-title {
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .upgrade-desc,
+.dark-mode .faq-a {
+  color: #b6b6c9;
+}
+
+.dark-mode .plan-card {
+  background: #232946;
+  color: #f1f5f9;
+  border: 2px solid #232946;
+}
+
+.dark-mode .plan-card.popular {
+  border-color: #a78bfa;
+  box-shadow: 0 8px 32px rgba(167,139,250,0.10);
+}
+
+.dark-mode .plan-badge {
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  color: #232946;
+}
+
+.dark-mode .plan-icon {
+  color: #a78bfa;
+}
+
+.dark-mode .plan-card h2,
+.dark-mode .faq-q {
+  color: #e0e7ef;
+}
+
+.dark-mode .price {
+  color: #a78bfa;
+}
+
+.dark-mode .features li {
+  color: #e0e7ef;
+}
+
+.dark-mode .features li::before {
+  color: #4ade80;
+}
+
+.dark-mode .select-plan {
+  background: #232946;
+  color: #a78bfa;
+  border: 2px solid #a78bfa;
+}
+
+.dark-mode .select-plan:hover {
+  background: #a78bfa;
+  color: #232946;
+}
+
+.dark-mode .faq-section {
+  background: #18122b;
+  color: #e0e7ef;
+}
+
+.dark-mode .contact-sales {
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  color: #232946;
+}
+
+.dark-mode .contact-btn {
+  background: #232946;
+  color: #a78bfa;
+}
+
+.dark-mode .contact-btn:hover {
+  background: #a78bfa;
+  color: #232946;
+}
+
+/* Smooth transitions for theme */
+.upgrade-container, .plan-card, .faq-section, .contact-sales, .select-plan, .contact-btn {
+  transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
 } 

@@ -11,11 +11,6 @@ body {
   line-height: 1.6;
 }
 
-/* Typography */
-h1, h2, h3 {
-  color: #1f2937;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -52,16 +47,11 @@ a {
 .upload {
   border: 2px dashed #cbd5e1;
   padding: 2rem;
-  background-color: #ffffff;
   border-radius: 12px;
   text-align: center;
   width: 100%;
   max-width: 600px;
   transition: background-color 0.3s;
-}
-
-.upload:hover {
-  background-color: #f3f4f6;
 }
 
 .uploadbtn {
@@ -121,6 +111,7 @@ a {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
+  margin-top: 10px;
 }
 
 .page-range input {

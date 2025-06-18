@@ -37,7 +37,7 @@ const Navbar = () => {
           <button className={`upgrade-btn ${darkMode ? 'dark' : ''}`} onClick={handleUpgrade} style={{ cursor: 'pointer' }}>Upgrade</button>
         </div>
         <div className="cluster3">
-          <AccountCircleIcon style={{ color: darkMode ? '#fff' : '#000', fontSize: '35px', cursor: 'pointer' }}/>
+          <AccountCircleIcon style={{ color: darkMode ? '#fff' : '#000', fontSize: '35px', cursor: 'pointer' }} onClick={handleLogin}/>
           <button className="theme-toggle-btn" onClick={toggleTheme}>
             {darkMode ? <Brightness7Icon style={{ fontSize: '35px',color:'#fff'}} /> : <Brightness4Icon style={{ fontSize: '35px',color:'#000' }} />}
           </button>
